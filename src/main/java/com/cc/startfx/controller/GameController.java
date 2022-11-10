@@ -41,8 +41,15 @@ public class GameController {
 
     @FXML
     void startGame(ActionEvent event) {
-        iv_1_0.setImage(new Image("com/cc/startfx/img/player.jpg"));
+//        moglibyśmy zrobić tak:        
+//      File file = new File("src/main/resources/com/cc/startfx/img/player.jpg");
+//      Image image = new Image(file.toURI().toString());
+//        ale zamiast tego wyciągamy image z ImageView
+        Image image = iv_0_0.getImage();
+        iv_1_0.setImage(image);
+        iv_0_0.setImage(null);
     }
+
     // metoda initialize - działa jak konstruktor
     public void initialize(){
         lblName.setText(HelloController.userName);
